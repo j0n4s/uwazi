@@ -17,7 +17,8 @@ const I18NUtils = {
 
   getDefaultLocale: languages => (languages.find(language => language.default) || {}).key,
 
-  getLocale: (path, languages = [], cookie = {}) => I18NUtils.getUrlLocale(path, languages) || I18NUtils.getCoockieLocale(cookie) || I18NUtils.getDefaultLocale(languages),
+  getLocale: (path, languages = [], cookie = {}) => I18NUtils.getUrlLocale(path, languages) ||
+    I18NUtils.getCoockieLocale(cookie) || I18NUtils.getDefaultLocale(languages),
 
   saveLocale: (locale) => {
     if (isClient) {
